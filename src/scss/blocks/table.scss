@@ -43,12 +43,12 @@
   &__top {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     @include utils.adaptive-value('padding-block', 24, 0);
     padding-inline: 24px;
     border-radius: 24px;
     background-color: utils.$c_bg-white;
-    justify-items: center;
 
     @include utils.onTablet {
       background-color: utils.$c_white;
