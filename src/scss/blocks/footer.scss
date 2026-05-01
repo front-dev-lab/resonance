@@ -69,5 +69,9 @@
   &__copyright {
     @extend %copyright-text;
     color: utils.$c_dark-brown;
+
+    @include utils.onMobile {
+      text-align: center;
+    }
   }
 }
