@@ -1,0 +1,37 @@
+@use '../utils';
+@use '../typography';
+
+.link {
+  display: block;
+  width: max-content;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid transparent;
+  padding: 10px 24px;
+  @extend %link-text;
+  background: utils.$nav-link-text-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transition-property: scale;
+  transition-duration: utils.$anim-time;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &--active {
+    background:
+      utils.$nav-link-bg-gradient padding-box,
+      utils.$nav-link-border-gradient border-box;
+    background-clip: none;
+    -webkit-background-clip: none;
+    color: utils.$c_white;
+    -webkit-text-fill-color: utils.$c_white;
+
+    &:hover {
+      scale: 1;
+    }
+  }
+}

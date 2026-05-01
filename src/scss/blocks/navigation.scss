@@ -1,0 +1,17 @@
+@use '../utils';
+
+.navigation {
+  width: max-content;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 16px;
+
+    &--vertical {
+      grid-auto-flow: row;
+      row-gap: 24px;
+      justify-items: center;
+    }
+  }
+}

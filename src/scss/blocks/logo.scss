@@ -1,0 +1,17 @@
+@use '../utils';
+
+.logo {
+  display: block;
+  width: 139px;
+  height: 26px;
+  background-image: url(/img/svg/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition-property: scale;
+  transition-duration: utils.$anim-time;
+
+  &:hover {
+    scale: 1.1;
+  }
+}

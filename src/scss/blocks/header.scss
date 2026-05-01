@@ -1,0 +1,37 @@
+@use '../utils';
+
+.header {
+  display: grid;
+  align-content: center;
+  width: 100%;
+  height: utils.$header-height;
+  border-bottom: 2px solid transparent;
+  transition-property: border-color, background-color;
+  transition-duration: utils.$anim-time;
+
+  &--active {
+    border-color: utils.$c_dark-brown;
+    background-color: utils.$c_bg-white;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__navigation {
+    @include utils.onTablet {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include utils.onTablet {
+      display: block;
+    }
+  }
+}

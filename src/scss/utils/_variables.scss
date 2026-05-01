@@ -1,0 +1,35 @@
+$max-width: 1280;
+$min-width: 420;
+$max-page-padding: 80;
+$min-page-padding: 24;
+
+$max-mobile-width: 576px;
+$max-tablet-width: 992px;
+
+$header-height: 92px;
+
+$scroll-anim-time: 800ms;
+$anim-time: 300ms;
+
+$c_white: #fff;
+$c_bg-white: #F5F5F5;
+$c_gray: #666666;
+$c_light-gray: #D8D8D8;
+$c_black: #000;
+$c_very-dark-brown: #3B3B3B;
+$c_dark-brown: #52483E;
+$c_brown: #8B8782;
+$c_yellow: #D8B74B;
+$c_green: #94915B;
+$c_red: #883D39;
+
+$nav-link-text-gradient: linear-gradient(180deg, $c_black 0%, $c_gray 100%);
+$nav-link-border-gradient: linear-gradient(180deg, $c_black 0%, $c_brown 100%);
+$nav-link-bg-gradient: linear-gradient(180deg, $c_dark-brown 0%, $c_brown 100%);
+$menu-gradient: linear-gradient(180deg, #F8BF93 0%, #d2cdc6 100%);
+$hero-bg-gradient: linear-gradient(180deg, #d2cdc6 0%, $c_bg-white 100%);
+$h1-gradient: linear-gradient(180deg, #DACCBC 0%, #AFA497 100%);
+$features-card-gradient: linear-gradient(180deg, #d2cdc6 0%, #F8BF93 100%);
+$tech-gradient: linear-gradient(180deg, #d2cdc6 0%, #F2EBE3 100%);
+$button-border-gradient: linear-gradient(180deg, $c_brown 0%, #d2cdc6  100%);
+$footer-bg-gradient: linear-gradient(180deg, $c_bg-white 0%, #d2cdc6 100%);

@@ -1,0 +1,152 @@
+@use '../utils';
+@use '../typography';
+
+.table {
+  @extend %secondary-text;
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+
+    &--first {
+      border-radius: 24px 24px 0 0;
+    }
+
+    &--last {
+      border-radius:  0 0 24px 24px;
+    }
+
+    @include utils.onTablet {
+      column-gap: 0;
+      background-color: utils.$c_white;
+    }
+  }
+
+  &__cell {
+    @include utils.adaptive-value('padding-inline', 24, 8);
+    padding-bottom: 32px;
+    background-color: utils.$c_white;
+
+    &--first {
+      border-radius: 24px 24px 0 0;
+      padding-top: 24px;
+      padding-bottom: 42px;
+    }
+
+    &--last {
+      border-radius:  0 0 24px 24px;
+      @include utils.adaptive-value('border-bottom', 60, 24);
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include utils.adaptive-value('padding-block', 24, 0);
+    padding-inline: 24px;
+    border-radius: 24px;
+    background-color: utils.$c_bg-white;
+    justify-items: center;
+
+    @include utils.onTablet {
+      background-color: utils.$c_white;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin-bottom: 8px;
+    @extend %h3;
+    color: utils.$c_dark-brown;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__tech {
+    display: grid;
+    row-gap: 12px;
+    justify-items: center;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 32px;
+      aspect-ratio: 1;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &--cpu {
+      &::before {
+        background-image: url(/img/svg/cpu.svg);
+      }
+    }
+
+    &--volume {
+      &::before {
+        background-image: url(/img/svg/volume.svg);
+      }
+    }
+
+    &--user-sound {
+      &::before {
+        background-image: url(/img/svg/user-sound.svg);
+      }
+    }
+
+    &--equalizer {
+      &::before {
+        background-image: url(/img/svg/equalizer.svg);
+      }
+    }
+
+    &--none {
+      &::before {
+        background-image: url(/img/svg/none.svg);
+      }
+    }
+
+    &--ear {
+      &::before {
+        background-image: url(/img/svg/ear.svg);
+      }
+    }
+
+    &--hand {
+      &::before {
+        background-image: url(/img/svg/hand.svg);
+      }
+    }
+
+    &--battery {
+      &::before {
+        background-image: url(/img/svg/battery.svg);
+      }
+    }
+
+    &--drop {
+      &::before {
+        background-image: url(/img/svg/drop.svg);
+      }
+    }
+
+    &--microphone {
+      &::before {
+        background-image: url(/img/svg/microphone.svg);
+      }
+    }
+  }
+}

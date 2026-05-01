@@ -1,0 +1,30 @@
+@use '../utils';
+@use '../typography';
+
+.dreamlike {
+  min-height: 600px;
+  height: 100vh;
+  @include utils.adaptive-value('max-height', 900, 800);
+  @include utils.adaptive-value('padding-top', 80, 42);
+  background-image: url(/img/dreamlike-desctop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: utils.$c_white;
+  font-size: 24px;
+  text-align: center;
+
+  @include utils.onMobile {
+    background-image: url(/img/dreamlike-mobile.png);
+  }
+
+  &__content {
+    display: grid;
+    justify-items: center;
+    row-gap: 24px;
+  }
+
+  &__title {
+    @extend %h2-large;
+  }
+}

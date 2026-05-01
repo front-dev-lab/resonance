@@ -1,0 +1,69 @@
+@use '../utils';
+
+.anim-text {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: utils.$scroll-anim-time;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: utils.$c_bg-white;
+    transition-property: transform;
+    transition-duration: utils.$scroll-anim-time;
+  }
+
+  &--white {
+    &::after {
+      background-color: utils.$c_white;
+    }
+  }
+
+  &--only-opacity {
+    &::after {
+      content: none;
+    }
+  }
+
+  &--active {
+    opacity: 1;
+
+    &::after {
+      transform: translateY(100%);
+    }
+  }
+}
+
+.anim-image {
+  scale: 1.1;
+  opacity: 0;
+  transform-origin: center;
+  transition-property: scale, opacity;
+  transition-duration: utils.$scroll-anim-time;
+
+  &--active {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.anim-icon {
+  scale: 0.7;
+  opacity: 0;
+  transform-origin: center;
+  transition-property: scale, opacity;
+  transition-duration: utils.$scroll-anim-time;
+
+  &--active {
+    scale: 1;
+    opacity: 1;
+  }
+}

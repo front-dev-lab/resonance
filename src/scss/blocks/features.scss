@@ -1,0 +1,51 @@
+@use '../utils';
+@use '../typography';
+
+.features {
+  overflow-x: hidden;
+
+  &__slider {
+    overflow: visible;
+  }
+
+  &__slide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    max-width: 1080px;
+    border-radius: 24px;
+    background: utils.$features-card-gradient;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    @include utils.onTablet {
+      grid-template-columns: 1fr;
+      row-gap: 42px;
+      padding-top: 42px;
+    }
+  }
+
+  &__text {
+    @include utils.adaptive-value('padding-inline', 80, 32);
+    @extend %large-text;
+    color: utils.$c_dark-brown;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+
+    @include utils.onTablet {
+      justify-self: center;
+      width: 50%;
+      aspect-ratio: 1;
+    }
+
+    @include utils.onMobile {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@use '../utils';
+@use '../typography';
+
+.footer {
+  @include utils.adaptive-value('padding-top', 80, 42);
+  background: utils.$footer-bg-gradient;
+
+  @include utils.onMobile {
+    padding-inline: 24px;
+  }
+
+  &__article {
+    margin-bottom: 42px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    @extend %h2;
+    color: utils.$c_dark-brown;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    @extend %footer-text;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 16px;
+    justify-content: center;
+  }
+
+  &__bottom {
+    padding-block: 28px;
+    border-top: 1px solid utils.$c_brown;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include utils.onTablet {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    @include utils.onTablet {
+      display: none;
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 16px;
+    align-items: center;
+
+    @include utils.onMobile {
+      grid-auto-flow: row;
+      row-gap: 16px;
+      justify-items: center;
+    }
+  }
+
+  &__copyright {
+    @extend %copyright-text;
+    color: utils.$c_dark-brown;
+  }
+}

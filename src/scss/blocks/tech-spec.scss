@@ -1,0 +1,46 @@
+@use '../utils';
+@use '../typography';
+
+.tech-spec {
+  @include utils.adaptive-value('padding-block', 80, 42);
+  border-bottom: 1px solid utils.$c_light-gray;
+
+  &:last-of-type {
+    border: none;
+    background: utils.$tech-gradient;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 42x;
+
+    @include utils.onTablet {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+    }
+  }
+
+  &__title {
+    @extend %h2-small;
+    color: utils.$c_dark-brown;
+  }
+
+  &__colors {
+    display: grid;
+    row-gap: 5px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 320 / 480;
+    object-fit: cover;
+    object-position: 62%;
+  }
+
+  &__list-item {
+    @extend %tech-list-text;
+  }
+}

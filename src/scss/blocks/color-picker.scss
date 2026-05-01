@@ -1,0 +1,34 @@
+@use '../utils';
+
+.color-picker {
+  display: grid;
+  grid-auto-flow: column;
+  @include utils.adaptive-value('column-gap', 40, 26);
+  width: max-content;
+
+  &__button {
+    @include utils.adaptive-value('width', 60, 40);
+    aspect-ratio: 1;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    transition-property: border-color;
+    transition-duration: utils.$anim-time;
+
+    &--active {
+      border-color: utils.$c_dark-brown;
+    }
+
+    &--yellow {
+      background-color: utils.$c_yellow;
+    }
+
+    &--green {
+      background-color: utils.$c_green;
+    }
+
+    &--red {
+      background-color: utils.$c_red;
+    }
+  }
+}

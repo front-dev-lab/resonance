@@ -1,0 +1,65 @@
+@use '../utils';
+@use '../typography';
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    display: grid;
+    align-content: center;
+    min-height: 600px;
+    height: 100vh;
+    max-height: 900px;
+
+    @include utils.onTablet {
+      min-height: 900px;
+      max-height: 1100px;
+    }
+
+    @include utils.onMobile {
+      align-content: flex-start;
+      min-height: auto;
+      height: max-content;
+      max-height: fit-content;
+      padding-top: utils.$header-height + 80px;
+      padding-bottom: 42px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    color: utils.$c_dark-brown;
+    text-align: center;
+  }
+
+  &__title-text {
+    position: relative;
+    z-index: -2;
+    background: utils.$h1-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -40%);
+    height: 100%;
+    aspect-ratio: 1;
+
+    @include utils.onTablet {
+      height: auto;
+      width: 100%;
+    }
+
+    @include utils.onMobile {
+      position: static;
+      transform: translate(0);
+    }
+  }
+}

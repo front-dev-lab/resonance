@@ -1,0 +1,26 @@
+@use '../utils';
+@use '../typography';
+
+.button {
+  width: max-content;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 1px;
+  background: utils.$button-border-gradient;
+
+  &__link {
+    display: block;
+    border-radius: 24px;
+    padding: 9px 31px;
+    background-color: utils.$c_bg-white;
+    @extend %link-text;
+    color: utils.$c_black;
+    transition-property: background-color, color;
+    transition-duration: utils.$anim-time;
+
+    &:hover {
+      background-color: utils.$c_black;
+      color: utils.$c_white;
+    }
+  }
+}

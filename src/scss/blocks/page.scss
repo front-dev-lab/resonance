@@ -1,0 +1,61 @@
+@use '../utils';
+@use '../typography';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: utils.$c_bg-white; 
+  @extend %main-text;
+  color: utils.$c_brown;
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    &--main {
+      position: fixed;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+    transform: translateY(-100%);
+    transition-property: transform;
+    transition-duration: utils.$anim-time;
+
+    @include utils.onTablet {
+      display: block;
+    }
+
+    &--active {
+      transform: translateY(0);
+    }
+  }
+
+  &__hero {
+    @include utils.adaptive-value('margin-bottom', 80, 42);
+  }
+
+  &__carousel {
+    @include utils.adaptive-value('margin-bottom', 160, 66);
+  }
+
+  &__features {
+    @include utils.adaptive-value('margin-bottom', 80, 66);
+  }
+
+  &__personalize {
+    @include utils.adaptive-value('margin-bottom', 160, 80);
+  }
+}

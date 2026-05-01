@@ -1,0 +1,25 @@
+@use '../utils';
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: utils.$max-width + px;
+  height: 100%;
+  @include utils.adaptive-value('padding-inline', utils.$max-page-padding, utils.$min-page-padding);
+
+  &--large {
+    padding-inline: utils.$min-page-padding + px;
+  }
+
+  &--small {
+    @include utils.adaptive-value('padding-inline', 120, utils.$min-page-padding);
+  }
+
+  &--mobile-small {
+    @include utils.adaptive-value('padding-inline', utils.$max-page-padding, 48);
+  }
+
+  &--very-small {
+    @include utils.adaptive-value('padding-inline', 142, utils.$min-page-padding);
+  }
+}

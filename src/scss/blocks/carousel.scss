@@ -1,0 +1,42 @@
+@use '../utils';
+@use '../_typography';
+
+.carousel {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 16px;
+    @extend %h2;
+    color: utils.$c_dark-brown;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__slider-wrapper {
+    margin-bottom: 24px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 660px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    scale: 0.5;
+    filter: blur(10px);
+    transition-property: scale, filter;
+    transition-duration: utils.$anim-time;
+
+    &--active {
+      scale: 1;
+      filter: blur(0px);
+    }
+  }
+
+  &__bullet {
+    @include utils.adaptive-value('margin-inline', 20, 13);
+  }
+}

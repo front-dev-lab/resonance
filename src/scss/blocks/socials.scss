@@ -1,0 +1,35 @@
+@use '../utils';
+
+.socials {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  width: max-content;
+
+  &__icon {
+    display: block;
+    width: 32px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-property: scale;
+    transition-duration: utils.$anim-time;
+
+    &:hover {
+      scale: 1.2;
+    }
+
+    &--discord {
+      background-image: url(/img/svg/discord.svg);
+    }
+
+    &--x {
+      background-image: url(/img/svg/x.svg);
+    }
+
+    &--meta {
+      background-image: url(/img/svg/meta.svg);
+    }
+  }
+}
