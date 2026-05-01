@@ -6,9 +6,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        "tech-specs": resolve(__dirname, 'tech-specs.html'),
-        compare: resolve(__dirname, 'compare.html'),
+        main: 'index.html',
+        "tech-specs": 'tech-specs.html',
+        compare: 'compare.html',
       },
     },
   },
